@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="false" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="accueil" class="controller.BanqueAction" method="execute">
+            <result>/index.jsp</result>
+        </action>
+        
+        <action name="listComptes" class="controller.BanqueAction" method="list">
+            <result name="success">/list.jsp</result>
+        </action>
+        
+        
+        <action name="createCompte" class="controller.BanqueAction" method="create">
+            <result name="input">/create.jsp</result>
+            <result name="success">/list.jsp</result>
+        </action>
+        	
+        <action name="deleteCompte" class="controller.BanqueAction" method="delete">
+            <result name="success">/list.jsp</result>
+        </action>
+        
+        <action name="debiterCompte" class="controller.BanqueAction" method="debiter">
+            <result name="input">/debiter.jsp</result>
+            <result name="success">/list.jsp</result>
+        </action>
+        
+        <action name="crediterCompte" class="controller.BanqueAction" method="crediter">
+            <result name="input">/crediter.jsp</result>
+            <result name="success">/list.jsp</result>
+        </action>
+        
+        <action name="virementCompte" class="controller.BanqueAction" method="virement">
+            <result name="input">/virement.jsp</result>
+            <result name="success">/list.jsp</result>
+        </action>
+        
+        <action name="editerCompte" class="controller.BanqueAction" method="editer">
+            <result name="input">/editer.jsp</result>
+            <result name="success">/list.jsp</result>
+        </action>
+	</package>
+
+</struts>
